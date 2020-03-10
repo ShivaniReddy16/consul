@@ -1,0 +1,25 @@
+#!/bin/bash
+# This script can be used to install Consul and its dependencies. This script has been tested with the following
+
+set -e
+
+readonly DEFAULT_INSTALL_PATH="/opt/consul"
+readonly DEFAULT_CONSUL_USER="consul"
+readonly DOWNLOAD_PACKAGE_PATH="/tmp/consul.zip"
+
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+readonly SYSTEM_BIN_DIR="/usr/local/bin"
+
+readonly SCRIPT_NAME="$(basename "$0")"
+
+function print_usage {
+  echo
+  echo "Usage: install-consul [OPTIONS]"
+  echo
+  echo "This script can be used to install Consul and its dependencies. This script has been tested with Ubuntu 16.04 and Amazon Linux 2."
+echo
+echo "Options:"
+echo
+echo -e " --version\t\tThe Version of consul to install."
+echo " install-consul --version 1.2.2"
+}
